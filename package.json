@@ -1,0 +1,14 @@
+{
+  "id": "topdesk",
+  "name": "TOPdesk",
+  "version": "1.0.5",
+  "description": "TOPdesk IT Service Management",
+  "main": "index.js",
+  "author": "Hans",
+  "license": "MIT",
+  "config": {
+    "serviceURL": "https://{teamId}.topdesk.net",
+    "hasTeamId": true,
+    "urlInputSuffix": ".topdesk.net"
+  }
+}
