@@ -1,0 +1,39 @@
+name: CI
+
+# The whole recipe is a manifest plus two one-line modules, so there is nothing
+# to build, bundle or unit test. What can actually break a recipe is a manifest
+# Ferdium cannot parse or a module Node cannot load, so that is what runs here.
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  check:
+    name: Manifest and syntax
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: package.json parses and carries the fields Ferdium reads
+        run: |
+          node -e '
+            const pkg = require("./package.json");
+            const missing = ["id", "name", "version", "main", "config"].filter(
+              (key) => !pkg[key]
+            );
+            if (missing.length) {
+              console.error("package.json is missing: " + missing.join(", "));
+              process.exit(1);
+            }
+            console.log("package.json ok: " + pkg.id + " " + pkg.version);
+          '
+
+      - name: index.js and webview.js are valid JavaScript
+        run: |
+          node --check index.js
+          node --check webview.js

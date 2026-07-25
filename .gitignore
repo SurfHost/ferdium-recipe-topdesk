@@ -1,0 +1,13 @@
+# Dependencies (this recipe has none, but Ferdium tooling may install some)
+node_modules/
+
+# Packaged recipe archives produced when publishing
+*.tar.gz
+
+# Local logs
+*.log
+
+# OS cruft that file managers drop into working copies
+.DS_Store
+Thumbs.db
+desktop.ini

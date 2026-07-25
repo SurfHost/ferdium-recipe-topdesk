@@ -6,6 +6,8 @@
   "main": "index.js",
   "author": "Hans",
   "license": "MIT",
+  "repository": "https://github.com/SurfHost/ferdium-recipe-topdesk",
+  "bugs": "https://github.com/SurfHost/ferdium-recipe-topdesk/issues",
   "config": {
     "serviceURL": "https://{teamId}.topdesk.net",
     "hasTeamId": true,
