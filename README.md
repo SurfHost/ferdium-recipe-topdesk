@@ -14,10 +14,10 @@ A [Ferdium](https://ferdium.org) recipe for [TOPdesk](https://www.topdesk.com) I
 
 ## Files
 
-- `package.json` — Recipe configuration
-- `index.js` — Main recipe entry point
-- `webview.js` — Webview injection script
-- `icon.svg` — TOPdesk logo
+- `package.json` - Recipe configuration
+- `index.js` - Main recipe entry point
+- `webview.js` - Webview injection script
+- `icon.svg` - TOPdesk logo
 
 ## License
 
